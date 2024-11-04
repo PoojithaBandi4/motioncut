@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Buff Central</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        #poster-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        #poster-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Character Bios Section */
+        #character-bios {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .character {
+            display: inline-block;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .character img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Trailers Section */
+        #trailers {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        iframe {
+            border-radius: 10px;
+        }
+
+        /* Quote of the Day */
+        #quote-of-the-day {
+            padding: 2rem;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        /* Trivia Quiz */
+        #trivia-quiz {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #quiz button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #quiz button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header>
+        <h1>Movie Buff Central</h1>
+        <p>Welcome to the ultimate fan page for [Movie/Franchise]! Explore, learn, and engage with your favorite characters and scenes.</p>
+        <div id="poster-gallery">
+            <img src="poster1.jpg" alt="Movie Poster 1">
+            <img src="poster2.jpg" alt="Movie Poster 2">
+        </div>
+    </header>
+
+    <!-- Character Bios Section -->
+    <section id="character-bios">
+        <h2>Character Bios</h2>
+        <div class="character">
+            <img src="character1.jpg" alt="Character 1">
+            <h3>Character Name</h3>
+            <p>Interesting facts and description about the character.</p>
+        </div>
+        <div class="character">
+            <img src="character2.jpg" alt="Character 2">
+            <h3>Character Name</h3>
+            <p>Interesting facts and description about the character.</p>
+        </div>
+    </section>
+
+    <!-- Embedded Movie Trailers -->
+    <section id="trailers">
+        <h2>Movie Trailers</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_TRAILER_LINK" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <!-- Quote of the Day Feature -->
+    <section id="quote-of-the-day">
+        <h2>Quote of the Day</h2>
+        <p id="quote"></p>
+    </section>
+
+    <!-- Trivia Quiz Section -->
+    <section id="trivia-quiz">
+        <h2>Trivia Quiz</h2>
+        <p>Test your knowledge about [Movie/Franchise]!</p>
+        <div id="quiz">
+            <p id="question">Who directed the first movie in the franchise?</p>
+            <button id="answer1">Option 1</button>
+            <button id="answer2">Option 2</button>
+            <button id="answer3">Option 3</button>
+            <button id="answer4">Option 4</button>
+        </div>
+    </section>
+
+    <script>
+        // Quote of the Day
+        const quotes = [
+            "Do or do not, there is no try. - Yoda",
+            "I am Iron Man. - Tony Stark",
+            "May the Force be with you. - Various Characters",
+            "Why so serious? - The Joker",
+            "With great power comes great responsibility. - Uncle Ben"
+        ];
+
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[randomIndex];
+        }
+
+        // Run on page load
+        window.onload = displayRandomQuote;
+
+        // Trivia Quiz Setup (simplified example)
+        const questions = [
+            {
+                question: "Who directed the first movie in the franchise?",
+                answers: ["Director 1", "Director 2", "Director 3", "Director 4"],
+                correct: 1
+            }
+        ];
+
+        function loadQuestion() {
+            const currentQuestion = questions[0];
+            document.getElementById("question").textContent = currentQuestion.question;
+            document.getElementById("answer1").textContent = currentQuestion.answers[0];
+            document.getElementById("answer2").textContent = currentQuestion.answers[1];
+            document.getElementById("answer3").textContent = currentQuestion.answers[2];
+            document.getElementById("answer4").textContent = currentQuestion.answers[3];
+        }
+
+        document.getElementById("quiz").addEventListener("click", function(event) {
+            if (event.target.tagName === "BUTTON") {
+                const answerIndex = Array.from(event.target.parentElement.children).indexOf(event.target);
+                if (answerIndex === questions[0].correct) {
+                    alert("Correct!");
+                } else {
+                    alert("Try again.");
+                }
+            }
+        });
+
+        // Load the first question
+        loadQuestion();
+    </script>
+</body>
+</html>
+

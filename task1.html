@@ -1,0 +1,244 @@
+1    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio - My Digital Showcase">
+    <title>My Digital Showcase</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        header .profile-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .skill ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        /* Contact Form */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <header id="home">
+        <div class="intro">
+            <img src="img.jpg" alt="Your Photo" class="profile-photo">
+            <h1>Hi, I'm Poojitha</h1>
+            <p>I'm passionate about crafting intuitive user experiences and bringing ideas to life through clean, efficient code, specializing in front-end development using HTML5, CSS3, and JavaScript.</p>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a Student with a background in Btech. I enjoy working on projects that allow for creative freedom and problem-solving, and constantly learning new things.</p>
+        <p>Education: Btech</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Problem-Solving</li>
+                    <li>Leadership</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Project 1</h3>
+                <p>A brief description of your project.</p>
+                <a href="https://github.com/your-project-link" target="_blank" class="btn">GitHub</a>
+                <a href="https://live-demo-link.com" target="_blank" class="btn">Live Demo</a>
+            </div>
+            <!-- Add more projects similarly -->
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://your-backend-endpoint.com" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 My Digital Showcase. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/your-linkedin" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-github" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            fetch('https://your-backend-endpoint.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email, message: message })
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message!');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

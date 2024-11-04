@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Legends Hub</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #004d00;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Featured Players */
+        #featured-players {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .player-card {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .player-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Map Section */
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: #ccc;
+            margin-top: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Top Matches Section */
+        .match {
+            background-color: white;
+            margin: 1rem auto;
+            padding: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fan Zone */
+        .fan-zone {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .fan-zone input, .fan-zone textarea, .fan-zone button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .fan-zone button {
+            background-color: #004d00;
+            color: white;
+            cursor: pointer;
+        }
+
+        .fan-zone button:hover {
+            background-color: #003300;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Cricket Legends Hub</h1>
+        <p>Your go-to destination for cricket legends, achievements, and memorable matches.</p>
+    </header>
+
+    <!-- Featured Players Section -->
+    <section id="featured-players">
+        <h2>Featured Players</h2>
+        <div class="player-card">
+            <img src="player1.jpg" alt="Player 1">
+            <h3>Player Name</h3>
+            <p>Position: Batsman</p>
+            <p>Runs: 12,000</p>
+            <p>Centuries: 35</p>
+        </div>
+        <div class="player-card">
+            <img src="player2.jpg" alt="Player 2">
+            <h3>Player Name</h3>
+            <p>Position: Bowler</p>
+            <p>Wickets: 500</p>
+            <p>Economy: 3.5</p>
+        </div>
+        <!-- Add more player cards here -->
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="map-section">
+        <h2>Interactive Map</h2>
+        <p>Explore the hometowns of your favorite cricket players.</p>
+        <div id="map">[Map Placeholder]</div>
+    </section>
+
+    <!-- Top Matches Section -->
+    <section id="top-matches">
+        <h2>Top Matches</h2>
+        <div class="match">
+            <h3>India vs Pakistan - 2011 World Cup</h3>
+            <p>A memorable match with thrilling moments and nail-biting finishes.</p>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="match">
+            <h3>Australia vs England - Ashes Series 2005</h3>
+            <p>A historic Ashes match that kept fans on the edge of their seats.</p>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Add more matches here -->
+    </section>
+
+    <!-- Fan Zone Section -->
+    <section id="fan-zone">
+        <h2>Fan Zone</h2>
+        <div class="fan-zone">
+            <h3>Share Your Favorite Cricket Story</h3>
+            <input type="text" id="fan-name" placeholder="Your Name" required>
+            <textarea id="fan-story" placeholder="Share your favorite cricket moment..." required></textarea>
+            <button onclick="submitStory()">Submit Story</button>
+        </div>
+        
+        <div class="fan-zone">
+            <h3>Vote for the Greatest Player of All Time</h3>
+            <button onclick="voteForPlayer('Player 1')">Vote for Player 1</button>
+            <button onclick="voteForPlayer('Player 2')">Vote for Player 2</button>
+            <!-- Add more voting buttons as needed -->
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to manage Fan Zone interactions
+
+        function submitStory() {
+            const name = document.getElementById('fan-name').value;
+            const story = document.getElementById('fan-story').value;
+            if (name && story) {
+                alert(`Thank you, ${name}! Your story has been submitted.`);
+                document.getElementById('fan-name').value = '';
+                document.getElementById('fan-story').value = '';
+            } else {
+                alert("Please fill out both your name and story.");
+            }
+        }
+
+        let voteCounts = {
+            'Player 1': 0,
+            'Player 2': 0,
+            // Add more players as needed
+        };
+
+        function voteForPlayer(player) {
+            voteCounts[player]++;
+            alert(`Thank you for voting! ${player} now has ${voteCounts[player]} votes.`);
+        }
+    </script>
+
+</body>
+</html>
+
